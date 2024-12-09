@@ -43,7 +43,7 @@ public class Interactable : MonoBehaviour
     }
 
     // This function checks for nearby interactable objects
-    public void CheckForInteractableWithInput()
+    public void CheckForInteractableWithInput( )
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         
@@ -58,6 +58,11 @@ public class Interactable : MonoBehaviour
                     // Check if the player(transform) is within range of interactable object and has not interacted with anything
                     if (interactable.IsPlayerInRange(player.transform) )
                     {
+                        if (currentInteractable != null && currentInteractable != interactable)
+                        {
+                            continue;
+                        }
+
                         currentInteractable = interactable;
                         if (currentInteractable != null)
                         {

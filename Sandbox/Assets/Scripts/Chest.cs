@@ -8,5 +8,7 @@ public class Chest : Interactable
     void Update()
     {   
         CheckForInteractableWithInput();
+
+        
     }
 }
