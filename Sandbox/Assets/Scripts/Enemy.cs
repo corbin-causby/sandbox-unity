@@ -9,8 +9,8 @@ public class Enemy : MonoBehaviour
 
     public float health = 100;
 
-    public int damage = 10;
-    public int secondaryDamage = 5;
+    private int damage = 10;
+    // public int secondaryDamage = 5;
 
     public KeyCode damageKey = KeyCode.Mouse0;
     public KeyCode secondaryDamageKey = KeyCode.Mouse1;
@@ -18,10 +18,10 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Check for enemies every frame
-        // CheckForEnemies();
+        CheckForEnemies();
         
         // You can add logic here to apply damage or interact with enemies in range
-        // ApplyDamageToEnemies();
+        ApplyDamageToEnemies();
     }
 
     public void CheckForEnemies()
@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour
             {
                 // Add the enemy to the list
                 enemiesInRange.Add(enemy);
+
             }
         }
     }
@@ -54,37 +55,20 @@ public class Enemy : MonoBehaviour
         return distance <= enemyRadius;
     }
 
-    public void ApplyDamageToEnemies()
+    public virtual void ApplyDamageToEnemies()
     {
-        // Loop through all the enemies that are in range
-        foreach (Enemy enemy in enemiesInRange)
+        // Example: enemy.TakeDamage(10);
+        if (Input.GetKeyDown(damageKey))
         {
-            // For example, apply damage to each enemy (you can replace this with your damage logic)
-            // If you want the enemies to affect the player or interact with the player, do it here
-            if (enemy != null)
-            {
-                // Apply damage to the player (example)
-                // Example: enemy.TakeDamage(10);
-                if (Input.GetKeyDown(damageKey))
-                {
-                    enemy.TakeDamage(10);
-                }//else if(Input.GetKeyDown(secondaryDamageKey))
-                //{
-                    //enemy.TakeDamage(5);
-                //}
-            }
+            TakeDamage(damage);
         }
     }
 
     // Optional: A method to handle damage to the enemy (you can customize this)
-    public void TakeDamage(int _damage)
+    public virtual void TakeDamage(int _damage)
     {
         // Handle taking damage (e.g., reduce health, play a sound, etc.)
         Debug.Log(name + " took " + _damage + " damage.");
-        if (enemiesInRange.Count > 1)
-        {
-           _damage /= enemiesInRange.Count; 
-        }
         
         health -= _damage;
 
