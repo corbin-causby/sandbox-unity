@@ -793,13 +793,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ab898712a04d945a2d7b4dc27cb44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  interactionMessage: Press E to Interact
-  hasEnteredRange: 0
   player: {fileID: 1349503102}
-  currentInteractable: {fileID: 0}
-  interactKey: 323
-  enemyHealth: 100
+  enemiesInRange: []
+  enemyRadius: 3
+  health: 100
+  damage: 10
+  secondaryDamage: 5
+  damageKey: 323
+  secondaryDamageKey: 324
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,13 +990,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11ab898712a04d945a2d7b4dc27cb44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
-  interactionMessage: Press E to Interact
-  hasEnteredRange: 0
   player: {fileID: 1349503102}
-  currentInteractable: {fileID: 0}
-  interactKey: 323
-  enemyHealth: 100
+  enemiesInRange: []
+  enemyRadius: 3
+  health: 100
+  damage: 10
+  secondaryDamage: 5
+  damageKey: 323
+  secondaryDamageKey: 324
 --- !u!136 &1046869413
 CapsuleCollider:
   m_ObjectHideFlags: 0
