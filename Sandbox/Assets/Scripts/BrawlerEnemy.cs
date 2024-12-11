@@ -5,11 +5,11 @@ public class BrawlerEnemy : Enemy
 
     public int brawlerDamage = 10;
     
-    public override void ApplyDamageToEnemies()
-    {
-        base.ApplyDamageToEnemies();
+    //public override void ApplyDamageToEnemies()
+    //{
+        //base.ApplyDamageToEnemies();
         // Additional logic for brawler can be added here
-    }
+    //}
 
     public override void TakeDamage(int _damage)
     {

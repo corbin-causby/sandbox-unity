@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public List<Enemy> enemiesInRange = new List<Enemy>(); // List to hold all enemies in range
     public float enemyRadius = 1f;
 
-    public float health = 100;
+    public float health;
 
     private int damage = 10;
     // public int secondaryDamage = 5;
@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
         
         // You can add logic here to apply damage or interact with enemies in range
         ApplyDamageToEnemies();
+        
     }
 
     public void CheckForEnemies()
@@ -43,9 +44,9 @@ public class Enemy : MonoBehaviour
             {
                 // Add the enemy to the list
                 enemiesInRange.Add(enemy);
-
             }
-        }
+       }
+
     }
 
     public bool IsPlayerInRange(Transform playerTransform)
@@ -60,7 +61,16 @@ public class Enemy : MonoBehaviour
         // Example: enemy.TakeDamage(10);
         if (Input.GetKeyDown(damageKey))
         {
+            if (enemiesInRange.Count > 1 )
+            {
+                // If there are multiple enemies in range, apply damage to all of them
+
+                TakeDamage(damage);
+            }
+            
+            damage /= enemiesInRange.Count;
             TakeDamage(damage);
+
         }
     }
 
