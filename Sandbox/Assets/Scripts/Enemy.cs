@@ -5,7 +5,7 @@ public class Enemy : Interactable
 
     void Update()
     {
-        CheckForInteractableWithInput();
+        CheckForInteractable();
     }
     public override void Interact()
     {

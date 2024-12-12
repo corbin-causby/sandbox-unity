@@ -16,34 +16,8 @@ public class Interactable : MonoBehaviour
 
     public KeyCode interactKey;
 
-    public void CheckForInteractable()
-    {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
-        
-            foreach (Collider col in hitColliders)
-            {
-                // creates interactable when player collides with an Interactable which might be a npc or chest
-                Interactable interactable = col.GetComponent<Interactable>();
-
-                // If no collision with interactable
-                if (interactable != null)
-                {   
-                    // Check if the player(transform) is within range of interactable object and has not interacted with anything
-                    if (interactable.IsPlayerInRange(player.transform) )
-                    {
-                        currentInteractable = interactable;
-                        
-                        return; // Exit the function loop after finding the first interactable object
-                    }
-                }
-            }      
-
-        // resets params to null   
-        currentInteractable = null;
-    }
-
     // This function checks for nearby interactable objects
-    public void CheckForInteractableWithInput( )
+    public void CheckForInteractable( )
     {
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         
@@ -79,8 +53,7 @@ public class Interactable : MonoBehaviour
                                 if (Input.GetKeyDown(interactKey))
                                 {
                                     Interact();
-
-                                    hasPressedInteractKey = true;
+                                     
                                 }
                             } 
                         }
@@ -92,7 +65,7 @@ public class Interactable : MonoBehaviour
 
         // resets params to null
         hasInteracted = false;
-        hasPressedInteractKey = false;   
+        // hasPressedInteractKey = false;   
         currentInteractable = null;
     }
     

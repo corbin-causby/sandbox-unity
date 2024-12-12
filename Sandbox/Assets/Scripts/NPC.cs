@@ -6,6 +6,12 @@ public class NPC : Interactable
     // Update is called once per frame
     void Update()
     {   
-        CheckForInteractableWithInput();
+        CheckForInteractable();
+    }
+
+    public override void Interact()
+    {
+        base.Interact();
+        // Attack enemy
     }
 }
