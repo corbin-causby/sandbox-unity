@@ -747,7 +747,6 @@ MonoBehaviour:
   hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
-  interactKey: 101
 --- !u!1 &786907323
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +886,6 @@ MonoBehaviour:
   hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
-  interactKey: 101
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,7 +1710,6 @@ MonoBehaviour:
   hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
-  interactKey: 102
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

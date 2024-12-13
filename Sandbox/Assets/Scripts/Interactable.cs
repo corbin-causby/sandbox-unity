@@ -11,10 +11,7 @@ public class Interactable : MonoBehaviour
     public Interactable currentInteractable = null;
 
     bool hasInteracted = false;
-    bool hasPressedInteractKey = false;
 
-
-    public KeyCode interactKey;
 
     // This function checks for nearby interactable objects
     public void CheckForInteractable( )
@@ -32,6 +29,8 @@ public class Interactable : MonoBehaviour
                     // Check if the player(transform) is within range of interactable object and has not interacted with anything
                     if (interactable.IsPlayerInRange(player.transform) )
                     {
+
+                        // Take this out if you only want to interact with the object once
                         if (currentInteractable != null && currentInteractable != interactable)
                         {
                             continue;
@@ -40,32 +39,24 @@ public class Interactable : MonoBehaviour
                         currentInteractable = interactable;
                         if (currentInteractable != null)
                         {
-                            // hasPressedInteractKey = false;
                             if (hasInteracted == false)
                             {
-                                Debug.Log(interactionMessage);  
+                                Interact(); 
 
                                 hasInteracted = true;
                             }
-
-                            if (hasInteracted == true && hasPressedInteractKey == false)
-                            {
-                                if (Input.GetKeyDown(interactKey))
-                                {
-                                    Interact();
-                                     
-                                }
-                            } 
                         }
                         
+                        // Take this out if you only want to interact with the object once
                         return; // Exit the function loop after finding the first interactable object
                     }
                 }
             }      
 
-        // resets params to null
+        // Take this out if you only want to interact with the object once
         hasInteracted = false;
-        // hasPressedInteractKey = false;   
+
+
         currentInteractable = null;
     }
     
