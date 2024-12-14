@@ -3,8 +3,6 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     public float radius = 3f;
-    public string interactionMessage = "Press E to Interact";
-    public bool hasEnteredRange = false;
     
     public Transform player;
     

@@ -743,8 +743,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  interactionMessage: Press E to Interact
-  hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
 --- !u!1 &786907323
@@ -761,6 +759,7 @@ GameObject:
   - component: {fileID: 786907329}
   - component: {fileID: 786907328}
   - component: {fileID: 786907331}
+  - component: {fileID: 786907332}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -882,10 +881,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
-  interactionMessage: Press E to Interact
-  hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
+--- !u!114 &786907332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786907323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9696b70f98eaf1a439f7e64cdf6433c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage:
+    baseValue: 10
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1140,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 255e806dda4e2b345a55bb4d0a4a1d00, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1349503104}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 255e806dda4e2b345a55bb4d0a4a1d00, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1349503105}
   m_SourcePrefab: {fileID: 100100000, guid: 255e806dda4e2b345a55bb4d0a4a1d00, type: 3}
 --- !u!1 &1349503101 stripped
 GameObject:
@@ -1191,6 +1206,21 @@ MonoBehaviour:
   sprintKey: 304
   jumpKey: 32
   state: 0
+--- !u!114 &1349503105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349503101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ebf8ce8884b82d449628249e0b53cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  damage:
+    baseValue: 0
 --- !u!1 &1412012791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,8 +1736,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 3
-  interactionMessage: Press F to Interact
-  hasEnteredRange: 0
   player: {fileID: 1349503102}
   currentInteractable: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
