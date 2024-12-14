@@ -896,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  interactKey: 323
   damage:
     baseValue: 10
 --- !u!1 &832575517
@@ -1219,6 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  interactKey: 0
   damage:
     baseValue: 0
 --- !u!1 &1412012791

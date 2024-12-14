@@ -4,17 +4,19 @@ public class CharacterStats : MonoBehaviour
 {
 
     public int maxHealth = 100;
-    public int currentHealth {get; private set;}
+    public int CurrentHealth {get; private set;}
+
+    public KeyCode interactKey;
     public Stat damage;
 
     void Awake ()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
     }
 
     void Update ()
     {   
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(interactKey))
         {
             TakeDamage(10);
         }
@@ -25,10 +27,10 @@ public class CharacterStats : MonoBehaviour
 
         // Make sure damage never goes below 0
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
-        currentHealth -= damage;
+        CurrentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
-        if  (currentHealth <= 0)
+        if  (CurrentHealth <= 0)
         {
             Die();
         }
