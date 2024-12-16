@@ -4,5 +4,10 @@ public class Chest : Interactable
 {
 
 
-    // Update is called once per fram
+    public override void Interact()
+    {
+        base.Interact();
+        
+        Debug.Log("Interacting with " + transform.name);
+    }
 }

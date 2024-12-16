@@ -1239,7 +1239,7 @@ MonoBehaviour:
   maxHealth: 100
   interactKey: 0
   damage:
-    baseValue: 0
+    baseValue: 10
 --- !u!114 &1349503106
 MonoBehaviour:
   m_ObjectHideFlags: 0

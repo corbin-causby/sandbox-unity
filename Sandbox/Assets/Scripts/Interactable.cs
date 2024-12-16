@@ -8,7 +8,6 @@ public class Interactable : MonoBehaviour
     
     public Interactable currentInteractable = null;
 
-    bool hasInteracted = false;
 
 
 
@@ -42,11 +41,9 @@ public class Interactable : MonoBehaviour
                         currentInteractable = interactable;
                         if (currentInteractable != null)
                         {
-                            if (hasInteracted == false)
+                            if (Input.GetKeyDown(KeyCode.Mouse0))
                             {
                                 Interact(); 
-
-                                hasInteracted = true;
                             }
                         }
                         
@@ -55,17 +52,13 @@ public class Interactable : MonoBehaviour
                     }
                 }
             }      
-
-        // Take this out if you only want to interact with the object once
-        hasInteracted = false;
-
-
+            
         currentInteractable = null;
     }
     
     public virtual void Interact ()
     {   
-        Debug.Log("Interacting with " + gameObject.name);  
+        // Debug.Log("Interacting with " + gameObject.name);  
     }
 
     public bool IsPlayerInRange(Transform playerTransform)
