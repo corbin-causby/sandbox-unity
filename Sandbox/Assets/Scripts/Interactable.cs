@@ -11,6 +11,11 @@ public class Interactable : MonoBehaviour
     bool hasInteracted = false;
 
 
+
+    void Update()
+    {
+        CheckForInteractable();
+    }
     // This function checks for nearby interactable objects
     public void CheckForInteractable( )
     {

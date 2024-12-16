@@ -16,10 +16,10 @@ public class CharacterStats : MonoBehaviour
 
     void Update ()
     {   
-        if (Input.GetKeyDown(interactKey))
-        {
-            TakeDamage(10);
-        }
+        //if (Input.GetKeyDown(interactKey))
+        //{
+            //TakeDamage(10);
+        //}
     }
 
     public void TakeDamage (int damage)
