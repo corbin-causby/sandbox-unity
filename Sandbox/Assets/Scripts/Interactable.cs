@@ -72,8 +72,8 @@ public class Interactable : MonoBehaviour
 
     void OnDrawGizmosSelected() 
     {
+        
         Gizmos.color = Color.yellow;
-
         // this unity function allows you to place a wire sphere around an object using the position of the transform and any radius 
         Gizmos.DrawWireSphere(transform.position, radius);
     }
